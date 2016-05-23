@@ -1,0 +1,22 @@
+Source: python-nova-docker
+Section: contrib/python
+Priority: optional
+Maintainer: Vincent Llorens <vincent.llorens@cc.in2p3.fr>
+Build-Depends: debhelper (>= 9),
+               dh-python,
+               git-core,
+               python-all,
+               python-pbr,
+               python-setuptools,
+#               python3-all,
+#               python3-pbr,
+#               python3-setuptools
+Standards-Version: 3.9.5
+Homepage: https://github.com/openstack/nova-docker
+
+Package: python-nova-docker
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}
+#Depends: ${python:Depends}, ${python3:Depends}, ${misc:Depends}
+Description: Docker driver for OpenStack Nova
+ Docker driver for OpenStack Nova

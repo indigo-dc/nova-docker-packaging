@@ -1,0 +1,5 @@
+python-nova-docker (16.04-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Vincent Llorens <vincent.llorens@cc.in2p3.fr>  Mon, 23 May 2016 14:09:00 +0200
