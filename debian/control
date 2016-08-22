@@ -1,22 +1,72 @@
-Source: python-nova-docker
+Source: nova-docker
 Section: contrib/python
 Priority: optional
 Maintainer: Vincent Llorens <vincent.llorens@cc.in2p3.fr>
 Build-Depends: debhelper (>= 9),
                dh-python,
                git-core,
-               python-all,
+               python-all (>= 2.7),
                python-pbr,
                python-setuptools,
-#               python3-all,
-#               python3-pbr,
-#               python3-setuptools
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
+X-Python-Version: >= 2.7
 Homepage: https://github.com/openstack/nova-docker
 
 Package: python-nova-docker
 Architecture: all
-Depends: ${python:Depends}, ${misc:Depends}
-#Depends: ${python:Depends}, ${python3:Depends}, ${misc:Depends}
-Description: Docker driver for OpenStack Nova
- Docker driver for OpenStack Nova
+Section: python
+Depends: python-nova (>= 2:12.0.0),
+         python-nova (<< 2:13.0.0),
+         python-docker,
+         docker-engine,
+         ${python:Depends}, 
+         ${misc:Depends}
+Replaces: python-nova-docker (= 16.04)
+Breaks: python-nova-docker (= 16.04)
+Provides: ${python:Provides}
+X-Python-Version: ${python:Versions}
+Description: OpenStack Compute - compute node (Docker)
+ OpenStack is a reliable cloud infrastructure. Its mission is to produce the
+ ubiquitous cloud computing platform that will meet the needs of public and
+ private cloud providers regardless of size, by being simple to implement and
+ massively scalable. 
+ .
+ OpenStack Compute, codenamed Nova, is a cloud computing fabric controller. In
+ addition to its "native" API (the OpenStack API), it also supports the Amazon
+ EC2 API. 
+ .
+ Nova is intended to be modular and easy to extend and adapt. It supports many
+ different hypervisors (KVM and Xen to name a few), different database backends
+ (SQLite, MySQL, and PostgreSQL, for instance), different types of user
+ databases (LDAP or SQL), etc. 
+ .
+ Install this package on your compute nodes if you're using Docker.
+
+Package: nova-compute-docker
+Architecture: all
+Section: python
+Depends: nova-compute (>= 2:12.0.0),
+         nova-compute (<< 2:13.0.0),
+         python-nova-docker (= ${binary:Version}),
+         ${python:Depends}, 
+         ${misc:Depends}
+Replaces: python-nova-docker (= 16.04)
+Breaks: python-nova-docker (= 16.04)
+Provides: nova-compute-hypervisor
+X-Python-Version: ${python:Versions}
+Description: OpenStack Compute - compute node (Docker)
+ OpenStack is a reliable cloud infrastructure. Its mission is to produce the
+ ubiquitous cloud computing platform that will meet the needs of public and
+ private cloud providers regardless of size, by being simple to implement and
+ massively scalable. 
+ .
+ OpenStack Compute, codenamed Nova, is a cloud computing fabric controller. In
+ addition to its "native" API (the OpenStack API), it also supports the Amazon
+ EC2 API. 
+ .
+ Nova is intended to be modular and easy to extend and adapt. It supports many
+ different hypervisors (KVM and Xen to name a few), different database backends
+ (SQLite, MySQL, and PostgreSQL, for instance), different types of user
+ databases (LDAP or SQL), etc. 
+ .
+ Install this package on your compute nodes if you're using Docker.

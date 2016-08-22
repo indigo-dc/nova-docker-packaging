@@ -1,3 +1,9 @@
+nova-docker (2:12.0.0~indigo-1) unstable; urgency=low
+
+  * Update version to be aligned with nova version.
+
+ -- Alvaro Lopez Garcia <aloga@ifca.unican.es>  Mon, 22 Aug 2016 12:58:00 +0200
+
 python-nova-docker (16.04-1) unstable; urgency=low
 
   * Initial release.
