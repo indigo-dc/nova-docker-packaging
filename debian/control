@@ -15,14 +15,12 @@ Homepage: https://github.com/openstack/nova-docker
 Package: python-nova-docker
 Architecture: all
 Section: python
-Depends: python-nova (>= 2:12.0.0),
-         python-nova (<< 2:13.0.0),
+Depends: python-nova (>= 2:13.0.0),
+         python-nova (<< 2:14.0.0),
          python-docker,
          docker-engine,
          ${python:Depends},
          ${misc:Depends}
-Replaces: python-nova-docker (= 16.04)
-Breaks: python-nova-docker (= 16.04)
 Provides: ${python:Provides}
 X-Python-Version: ${python:Versions}
 Description: OpenStack Compute - compute node (Docker)
@@ -45,13 +43,11 @@ Description: OpenStack Compute - compute node (Docker)
 Package: nova-compute-docker
 Architecture: all
 Section: python
-Depends: nova-compute (>= 2:12.0.0),
-         nova-compute (<< 2:13.0.0),
+Depends: nova-compute (>= 2:13.0.0),
+         nova-compute (<< 2:14.0.0),
          python-nova-docker (= ${binary:Version}),
          ${python:Depends},
          ${misc:Depends}
-Replaces: python-nova-docker (= 16.04)
-Breaks: python-nova-docker (= 16.04)
 Provides: nova-compute-hypervisor
 X-Python-Version: ${python:Versions}
 Description: OpenStack Compute - compute node (Docker)

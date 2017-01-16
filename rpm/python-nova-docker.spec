@@ -1,7 +1,7 @@
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
 
 Name:          python-nova-docker
-Version:       12.0.4~indigo
+Version:       13.0.0~indigo
 Release:       1%{?dist}
 Summary:       Docker driver for OpenStack Nova Compute
 Source:        %name-%version.tar.gz
@@ -12,8 +12,8 @@ BuildArch:     noarch
 BuildRequires: python-devel
 BuildRequires: python-setuptools
 Requires:      docker-engine
-Requires:      openstack-nova-compute >= 12.0.0
-Requires:      python-nova >= 12.0.0
+Requires:      openstack-nova-compute >= 13.0.0
+Requires:      python-nova >= 13.0.0
 Requires:      python-docker-py
 Requires:      python-pbr
 Requires:      python-babel
@@ -23,7 +23,6 @@ Requires:      python-oslo-utils
 Requires:      python-oslo-config
 Requires:      python-oslo-concurrency
 Requires:      python-oslo-i18n
-Conflicts:     python-nova-docker = 16.04
 
 %description
 OpenStack Compute - compute node (Docker)
@@ -63,6 +62,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Jan 16 2017 Vincent Llorens <vincent.llorens@cc.in2p3.fr> - 13.0.0~indigo-1
+- Update OpenStack dependency to Mitaka.
+
 * Fri Aug 29 2016 Vincent Llorens <vincent.llorens@cc.in2p3.fr> - 12.0.4~indigo-1
 - Fix dependencies and versioning
 
