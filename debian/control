@@ -21,6 +21,8 @@ Depends: python-nova (>= 2:14.0.0),
          docker-engine,
          ${python:Depends},
          ${misc:Depends}
+Replaces: python-nova-docker (= 16.04)
+Breaks: python-nova-docker (= 16.04)
 Provides: ${python:Provides}
 X-Python-Version: ${python:Versions}
 Description: OpenStack Compute - compute node (Docker)
@@ -48,6 +50,8 @@ Depends: nova-compute (>= 2:14.0.0),
          python-nova-docker (= ${binary:Version}),
          ${python:Depends},
          ${misc:Depends}
+Replaces: python-nova-docker (= 16.04)
+Breaks: python-nova-docker (= 16.04)
 Provides: nova-compute-hypervisor
 X-Python-Version: ${python:Versions}
 Description: OpenStack Compute - compute node (Docker)

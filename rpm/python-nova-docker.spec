@@ -23,6 +23,7 @@ Requires:      python-oslo-utils
 Requires:      python-oslo-config
 Requires:      python-oslo-concurrency
 Requires:      python-oslo-i18n
+Conflicts:     python-nova-docker = 16.04
 
 %description
 OpenStack Compute - compute node (Docker)
