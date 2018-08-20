@@ -1,4 +1,4 @@
-# nova-docker-packaging
+# (DEPRECATED) nova-docker-packaging
 
 ## CentOS 7
 Use the SPEC file under the rpm directory.
